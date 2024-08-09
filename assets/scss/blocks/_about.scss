@@ -1,0 +1,33 @@
+.about {
+    background: url(/assets/images/element.svg) no-repeat bottom right;
+
+    @include phone {
+        background-image: none;
+    }
+
+    &__inner {
+        justify-content: flex-end;
+    }
+
+    &__img {
+        max-width: 750px;
+        width: 50%;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    & .content {
+
+        & img {
+            display: none;
+
+            @include tablet {
+                display: block;
+                margin-inline: auto;
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

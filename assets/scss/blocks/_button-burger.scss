@@ -1,0 +1,78 @@
+.burger {
+    background: var(--bg-gradient);
+
+    &::before {
+        background: var(--bg-gradient-alt);
+    }
+
+    & span {
+        font-size: 0;
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--color-light);
+        border-radius: 3px;
+        transition: all .3s ease;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--color-light);
+            border-radius: 3px;
+
+            position: absolute;
+            left: 50%;
+            translate: -50% 0;
+            transition: all .3s ease;
+        }
+
+        &::before {
+            top: 20px;
+
+            @include mobile {
+                top: 18px;
+            }
+        }
+
+        &::after {
+            bottom: 20px;
+
+            @include mobile {
+                bottom: 18px;
+            }
+        }
+    }
+
+    &.burger--active {
+
+        background: var(--color-light);
+
+        &::before {
+            background: var(--color-gray-alt);
+        }
+
+        & span {
+            width: 0;
+
+            &::before,
+            &::after {
+                background: var(--color-dark);
+                top: 50%;
+                bottom: auto;
+                translate: -50% -50%;
+            }
+
+            &::before {
+                rotate: 45deg;
+            }
+
+            &::after {
+                rotate: -45deg;
+
+            }
+        }
+    }
+}

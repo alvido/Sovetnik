@@ -1,0 +1,20 @@
+@import 'normalize', 'fonts', 'mixins', 'media', 'veriables', 'utils', 'globals', 'animations';
+
+@import 'blocks/button',
+'blocks/navigation',
+'blocks/actions',
+'blocks/button-burger',
+'blocks/arrow',
+'blocks/form',
+'blocks/header',
+'blocks/logo',
+'blocks/hero',
+'blocks/services',
+'blocks/about',
+'blocks/experience',
+'blocks/offer',
+'blocks/news',
+'blocks/social',
+'blocks/comments',
+
+'blocks/footer';

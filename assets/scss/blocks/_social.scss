@@ -1,0 +1,31 @@
+.social {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+
+    @include phone {
+        column-gap: 8px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include squere(40px);
+        border: 2px solid var(--color-light);
+        border-radius: 50%;
+
+        @include hover {
+            color: var(--color-gray-alt);
+            border-color: var(--color-gray-alt);
+        }
+
+        @include phone {
+            @include squere(32px);
+
+            & svg {
+                width: 16px;
+            }
+        }
+    }
+}

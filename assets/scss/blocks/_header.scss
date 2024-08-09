@@ -1,0 +1,35 @@
+.header {
+    padding-block: clamp(1rem, 0.6rem + 1.78vw, 2rem);
+
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 40px;
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include phone {
+            display: none;
+        }
+
+        & a {
+
+            font-size: 18px;
+            font-weight: 600;
+
+            @include hover {
+                color: var(--color-accent);
+            }
+        }
+    }
+}

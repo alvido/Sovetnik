@@ -1,0 +1,135 @@
+.comments {
+
+    & h2,
+    & .section__text {
+        text-align: center;
+    }
+
+
+
+    &__list {
+        margin: clamp(2rem, 0.8rem + 5.33vw, 5rem) 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        /* max-width: 350px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+            object-fit: cover;
+            cursor: pointer;
+
+            @include phone {
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}
+
+main {
+    overflow: hidden;
+}
+
+.swiper {
+    position: relative;
+}
+
+.swiper-pagination {
+    position: static;
+    width: auto !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.swiper-pagination-bullet {
+    margin: 0 !important;
+    border-radius: 50%;
+    background: rgba(61, 114, 224, 0.8);
+}
+
+.swiper-pagination-bullet-active {
+    width: 16px;
+    height: 16px;
+    background: rgba(61, 114, 224, 1);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50%;
+    translate: 0 -50%;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+    background: #3d72e0;
+    border-radius: 50%;
+    border: 0;
+
+    @include mobile {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: none;
+        }
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: url(../images/icon/Path.svg) no-repeat center;
+    }
+
+
+
+}
+
+
+.swiper-button-next::after {
+    rotate: 180deg;
+}
+
+.swiper__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper__navigation-button {
+    display: flex;
+    align-items: center;
+}
+
+.fullscreen-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    @include mobile {
+
+        & .swiper-button-next,
+        & .swiper-button-prev {
+            display: flex;
+        }
+    }
+}
+
+.fullscreen-container img {
+    width: auto;
+    max-height: 100vh;
+}

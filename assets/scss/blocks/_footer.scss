@@ -1,0 +1,135 @@
+.footer {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    padding-block: clamp(1.25rem, 0.75rem + 2.22vw, 2.5rem);
+    color: var(--color-light);
+    margin-top: clamp(2.75rem, 0.55rem + 9.78vw, 8.25rem);
+    background: url(../images/element2.svg) no-repeat left bottom, linear-gradient(208.18deg, #74B9EB 9.05%, #3D72E0 76.74%);
+    background-position: -1% 104%;
+
+    @include mobile {
+    background: linear-gradient(208.18deg, #74B9EB 9.05%, #3D72E0 76.74%);
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 132px;
+        height: 115px;
+        background: url(../images/element.svg) no-repeat left bottom;
+
+        position: absolute;
+        right: 92px;
+        top: -72px;
+        z-index: -1;
+
+        @include phone {
+            display: none;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        column-gap: clamp(1.5rem, 1.1rem + 1.78vw, 2.5rem);
+
+        @include mobile {
+            flex-direction: column;
+            row-gap: 24px;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        @include tablet {
+
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+
+    &__logo {
+        margin-bottom: clamp(1rem, 0.4rem + 2.67vw, 2.5rem);
+    }
+
+    &__info {
+        margin-top: clamp(1rem, 0.6rem + 1.78vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: clamp(1rem, 0.8rem + 0.89vw, 1.5rem);
+
+        @include mobile {
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: clamp(1rem, 0.8rem + 0.89vw, 1.5rem);
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        @include hover {
+            color: var(--color-gray-alt);
+
+            & svg {
+                animation: rorateElements 2s infinite linear;
+            }
+        }
+
+        & svg {
+            margin-right: 8px;
+        }
+    }
+
+    &__social {
+        margin-top: 104px;
+
+        @include mobile {
+            margin: 0;
+            position: absolute;
+            top: 32px;
+            right: 16px;
+        }
+    }
+
+    &__title {
+        margin-bottom: clamp(1rem, 0.65rem + 1.56vw, 1.875rem);
+    }
+
+    & .map {
+        border-radius: 24px;
+
+        @include tablet {
+            width: 350px;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__nav-link {
+        font-size: 18px;
+        line-height: 2;
+
+        @include hover {
+            color: var(--color-gray-alt);
+        }
+    }
+
+    & .copy {
+        font-size: 16px;
+        line-height: 1.75;
+
+        @include tablet {
+            margin-top: 40px;
+        }
+    }
+}

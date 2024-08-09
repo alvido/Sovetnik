@@ -1,0 +1,24 @@
+.experience {
+
+    &__img {
+        max-width: 500px;
+        width: 50%;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    & .content {
+
+        & img {
+            display: none;
+
+            @include tablet {
+                display: block;
+                margin-inline: auto;
+                margin-bottom: 32px;
+            }
+        }
+    }
+}

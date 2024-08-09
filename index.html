@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>SOVETNIK</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner container">
+            <a href="/" class="header__logo logo">
+                <img class="logo__image" src="assets/images/logo.svg" alt="logo">
+            </a>
+            <div class="header__contact">
+                <a href="tel:+972-58-791-9977">+972-58-791-9977</a>
+                <a href="mailto:status@israelstatus.info">status@israelstatus.info</a>
+            </div>
+            <div class="header__menu">
+                <nav class="header__nav navigation">
+                    <button class="navigation__arrow arrow arrow__left" id="leftArrow">
+
+                    </button>
+                    <ul class="navigation__list" id="scrollableMenu">
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link navigation__link--active">
+                                ГРАЖДАНСТВО/ВНЖ
+                            </a>
+                            <ul class="navigation__sublist">
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Еврейские корни
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Служба в армии Израиля
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Брак
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Одинокий родитель
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Восстановление гражданства
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Гуманитарная виза
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Вдовы/Вдовцы
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Обращение в иудаизм – Гиюр
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Архивный поиск
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Репатриация в Израиль
+                                    </a>
+                            </ul>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">
+                                МВД
+                            </a>
+                            <ul class="navigation__sublist">
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Еврейские корни
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Служба в армии Израиля
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">
+                                СТУПРО
+                            </a>
+                            <ul class="navigation__sublist">
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Еврейские корни
+                                    </a>
+                                </li>
+                                <li class="navigation__subitem">
+                                    <a href="#" class="navigation__sublink">
+                                        Служба
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">
+                                ДНК
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">
+                                НОТАРИАЛЬНЫЕ
+                            </a>
+                        </li>
+                        <li class="navigation__item">
+                            <a href="#" class="navigation__link">
+                                Доминикана
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="navigation__arrow arrow arrow__right" id="rightArrow">
+
+                    </button>
+                </nav>
+                <div class="header__actions actions">
+                    <p class="">Навигация по сайту:</p>
+                    <button class="actions__button burger" id="burgerButton">
+                        <span>Меню</span>
+                    </button>
+                    <button class="actions__button language" id="languageButton">
+                        Ru
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero__inner container">
+                <div class="hero__content">
+                    <span class="hero__tagline">Ваше гражданство – наша миссия!</span>
+                    <h1 class="title">Получение израильского гражданства за 2-3 встречи</h1>
+                    <img src="assets/images/hero.svg" alt="hero">
+                    <p class="hero__text">
+                        Профессиональное сопровождение под ключ в получении израильского гражданства. Оперативная помощь
+                        в
+                        получении Израильского паспорта, поиске документов и освобождении Вас от бюрократии на 100%.
+                    </p>
+                    <button class="hero__button button">Заказать консультацию</button>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="services__inner container">
+                <h2 class="section__title">Наши услуги</h2>
+                <p class="section__text">Сотрудники Советника – профессиональные юристы, с большим практическим опытом в
+                    области полученияи
+                    оформления израильского гражданства, поиска еврейских корней и репатриации в Израиль.</p>
+                <ul class="services__list">
+                    <li class="services__item">
+                        <img src="assets/images/services/ID-Card.svg" alt="id">
+                        <h3 class="services__title"><a class="services__link" href="#">Гражданство/ВНЖ</a></h3>
+                        <p class="services__text">
+                            Получение гражданства Израиля всего за 2-3 встречи. Оформление ВНЖ. Легально!
+                        </p>
+                    </li>
+                    <li class="services__item">
+                        <img src="assets/images/services/Wedding.svg" alt="id">
+                        <h3 class="services__title"><a class="services__link" href="#">Программа
+                                СТУПРО</a></h3>
+                        <p class="services__text">
+                            Брак с израильтянином, воссоединение семьи и оформление гражданства Израиля
+                        </p>
+                    </li>
+                    <li class="services__item">
+                        <img src="assets/images/services/DNA.svg" alt="id">
+                        <h3 class="services__title"><a class="services__link" href="#">Тест
+                                ДНК</a></h3>
+                        <p class="services__text">
+                            Установление отцовства, поиск
+                            еврейских корней, гражданство Израиля по тесту ДНК
+                        </p>
+                    </li>
+                    <li class="services__item">
+                        <img src="assets/images/services/Documents.svg" alt="id">
+                        <h3 class="services__title"><a class="services__link" href="#">МВД</a>
+                        </h3>
+                        <p class="services__text">
+                            Оформление и заказ различных юридических документов, справок, продление паспорта и т.д.
+                        </p>
+                    </li>
+                    <li class="services__item">
+                        <img src="assets/images/services/Certification.svg" alt="id">
+                        <h3 class="services__title"><a class="services__link" href="#">Нотариальные услуги</a></h3>
+                        <p class="services__text">
+                            Все виды документов, включая переводы на Русском, Английском, Украинском и на Иврите.
+                            Апостили.
+                        </p>
+                    </li>
+                    <li class="services__item">
+                        <img src="assets/images/services/rain.svg" alt="id">
+                        <h3 class="services__title"><a class="services__link" href="#">Финансы/Банки</a></h3>
+                        <p class="services__text">
+                            Открытие банковских счетов, международные переводы и произведение расчетов.
+                        </p>
+                    </li>
+                </ul>
+                <button class="services__button button button--transparent">Все услуги</button>
+            </div>
+        </section>
+        <section class="about">
+            <div class="about__inner container row">
+                <img class="about__img" src="assets/images/about.svg" alt="">
+                <div class="content">
+                    <h2 class="section__title left--decor">О компании</h2>
+                    <img src="assets/images/about.svg" alt="">
+                    <p class="section__text">СОВЕТНИК — Ваш надежный партнер в Израиле.Лицензия на ведение юридической
+                        деятельности с 2007 года!</p>
+                    <p class="section__text">Компания СОВЕТНИК — надежность, конфиденциальность и индивидуальный подход
+                        к каждому клиенту. </p>
+                    <p class="section__text">После получения гражданства мы остаемся с вами на долгие годы и
+                        предоставляем, дистанционно, множество необходимым вам услуг: решения вопросов с армией,
+                        получение справок из МВД, общение с институтом нац.страхования, сделки по недвижимости,
+                        сопровождение инвестиционных проектов. </p>
+                </div>
+
+            </div>
+        </section>
+        <section class="experience">
+            <div class="experience__inner container row">
+                <div class="content">
+                    <h2 class="section__title left--decor">Наш опыт</h2>
+                    <img src="assets/images/experience.svg" alt="">
+                    <p class="section__text">Наша команда — специалисты, которые обеспечат Вам и вашей семье решение
+                        бюрократических задач в Израиле, в самые краткие сроки.</p>
+                    <p class="section__text">Только в 2023 году СОВЕТНИК помог оперативно получить гражданство Израиля
+                        145-ти семьям из стран СНГ и Европы. Мы горды тем, что 99% клиентов обратились к нам по
+                        рекомендации своих друзей, родственников и коллег.</p>
+                    <p class="section__text">СОВЕТНИК — Ваш правильный выбор!</p>
+                </div>
+                <img class="experience__img" src="assets/images/experience.svg" alt="">
+            </div>
+        </section>
+        <section class="offer">
+            <div class="offer__inner container">
+                <form class="form" id="concactForm" method="post">
+                    <div class="form__inner">
+                        <h2 class="form__title">Получите бесплатную консультацию</h2>
+                        <p class="form__text">Заполните поля формы и нажмите кнопку “Отправить”. Наш специалист свяжется
+                            с вами в ближайшее время.</p>
+                        <div class="form__content">
+                            <div class="form__group">
+                                <label for="offerName">Ваше имя</label>
+                                <input type="text" id="offerName" name="offerName" required="" placeholder="Иван"
+                                    onkeypress="noDigits(event)">
+                            </div>
+                            <div class="form__group">
+                                <label for="offerEmail">Ваш e-mail</label>
+                                <input type="email" id="offerEmail" name="offerEmail" required=""
+                                    placeholder="example@mail.com">
+                            </div>
+                            <div class="form__group">
+                                <label for="offerPhone">Ваш телефон</label>
+                                <input type="tel" id="offerPhone" name="offerPhone" required=""
+                                    placeholder="Номер телефона" onkeypress="noLettersOrSpecialChars(event)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="form__button button" type="submit">Отправить</button>
+
+                </form>
+
+            </div>
+        </section>
+        <section class="comments">
+            <div class="comments__inner container">
+                <h2 class="section__title">Отзывы клиентов</h2>
+                <p class="section__text">
+                    Реальная обратная связь от наших клиентов об услугах и сотрудниках Советника
+                </p>
+
+            <!-- Slider main container -->
+            <div class="swiper" id="swiper">
+
+                <!-- Additional required wrapper -->
+                <ul class="swiper-wrapper comments__list">
+
+                    <!-- Slides -->
+                    <li class="swiper-slide comments__item"><img src="assets/images/1/1.png" alt=""></li>
+                    <li class="swiper-slide comments__item"><img src="assets/images/1/2.png" alt=""></li>
+                    <li class="swiper-slide comments__item"><img src="assets/images/1/3.png" alt=""></li>
+                    <li class="swiper-slide comments__item"><img src="assets/images/1/1.png" alt=""></li>
+                    <li class="swiper-slide comments__item"><img src="assets/images/1/3.png" alt=""></li>
+                </ul>
+                <div class="swiper__navigation">
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper__navigation-button">
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="news">
+            <div class="news__inner container">
+                <h2 class="section__title">Полезные статьи</h2>
+                <ul class="news__list">
+                    <li class="news__item">
+                        <img src="assets/images/articles/1.jpg" alt="" class="news__img">
+                        <div class="news__content">
+
+                            <h3 class="news__title">
+                                <a href="" class="news__link">Ступенчатая процедура
+                                    СТУПРО</a>
+                            </h3>
+                            <p class="news__text">СтупПро в Израиле, это своего рода легализация брака на территории
+                                Израиля. Процедура может длиться свыше 5-ти лет и требует...</p>
+                            <a href="" class="news__more">
+                                Читать далее
+                                <span>
+                                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.795455 5.34091L11.2955 5.34091L8.98864 7.64773C8.67045 7.96591 8.67045 8.44318 8.98864 8.76136C9.30682 9.07955 9.78409 9.07955 10.1023 8.76136L13.7614 5.10227C14.0795 4.78409 14.0795 4.30682 13.7614 3.98864L10.1023 0.329546C9.78409 0.0113636 9.30682 0.0113636 8.98864 0.329546C8.67046 0.647727 8.67046 1.125 8.98864 1.44318L11.2955 3.75L0.795455 3.75C0.397728 3.75 4.31153e-07 4.06818 3.89429e-07 4.54545C3.47704e-07 5.02273 0.397728 5.34091 0.795455 5.34091Z"
+                                            fill="#3D72E0" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="news__item">
+                        <img src="assets/images/articles/2.jpg" alt="" class="news__img">
+                        <div class="news__content">
+                            <h3 class="news__title">
+                                <a href="" class="news__link">Водительские права в Израиле</a>
+                            </h3>
+                            <p class="news__text">При условии, что вы водитель со стажем не менее 5 лет до момента
+                                репатриации в Израиль, вы можете обратиться в министерство...</p>
+                            <a href="" class="news__more">
+                                Читать далее
+                                <span>
+                                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.795455 5.34091L11.2955 5.34091L8.98864 7.64773C8.67045 7.96591 8.67045 8.44318 8.98864 8.76136C9.30682 9.07955 9.78409 9.07955 10.1023 8.76136L13.7614 5.10227C14.0795 4.78409 14.0795 4.30682 13.7614 3.98864L10.1023 0.329546C9.78409 0.0113636 9.30682 0.0113636 8.98864 0.329546C8.67046 0.647727 8.67046 1.125 8.98864 1.44318L11.2955 3.75L0.795455 3.75C0.397728 3.75 4.31153e-07 4.06818 3.89429e-07 4.54545C3.47704e-07 5.02273 0.397728 5.34091 0.795455 5.34091Z"
+                                            fill="#3D72E0" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="news__item">
+                        <img src="assets/images/articles/3.jpg" alt="" class="news__img">
+                        <div class="news__content">
+
+                            <h3 class="news__title">
+                                <a href="" class="news__link">Как репатрианту открыть бизнес</a>
+                            </h3>
+                            <p class="news__text">В законодательной сфере Израиль поддерживает развитие
+                                предпринимательской
+                                активности и выход частных компаний...</p>
+                            <a href="" class="news__more">
+                                Читать далее
+                                <span>
+                                    <svg width="14" height="9" viewBox="0 0 14 9" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0.795455 5.34091L11.2955 5.34091L8.98864 7.64773C8.67045 7.96591 8.67045 8.44318 8.98864 8.76136C9.30682 9.07955 9.78409 9.07955 10.1023 8.76136L13.7614 5.10227C14.0795 4.78409 14.0795 4.30682 13.7614 3.98864L10.1023 0.329546C9.78409 0.0113636 9.30682 0.0113636 8.98864 0.329546C8.67046 0.647727 8.67046 1.125 8.98864 1.44318L11.2955 3.75L0.795455 3.75C0.397728 3.75 4.31153e-07 4.06818 3.89429e-07 4.54545C3.47704e-07 5.02273 0.397728 5.34091 0.795455 5.34091Z"
+                                            fill="#3D72E0" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <a href="" class="button button--transparent">Посмотреть все</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__row">
+                <div class="footer__col">
+                    <a href="/" class="footer__logo logo">
+                        <img class="logo__image" src="assets/images/logo-sovetnik-white.svg" alt="logo">
+                    </a>
+                    <p class="footer__text">Ваше гражданство – наша миссия!</p>
+                    <div class="footer__info">
+                        <a href="tel:+972-58-791-9977" class="footer__link">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.66667 5.33325H12L14.6667 11.9999L11.3333 13.9999C12.7613 16.8953 15.1046 19.2386 18 20.6666L20 17.3333L26.6667 19.9999V25.3333C26.6667 26.806 25.4728 27.9999 24 27.9999C13.2369 27.3458 4.65408 18.7631 4 7.99992C4 6.52716 5.19391 5.33325 6.66667 5.33325"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            +972-58-791-9977
+                        </a>
+                        <a href="mailto:status@israelstatus.co.il" class="footer__link">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="6.66675" width="24" height="18.6667" rx="2" stroke="white"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M4 9.33325L16 17.3333L28 9.33325" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            status@israelstatus.co.il
+                        </a>
+                    </div>
+                    <div class="footer__social social">
+                        <a href="#" class="social__link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.3748 3.24984C17.5342 3.25331 18.6451 3.71539 19.4648 4.53517C20.2846 5.35495 20.7467 6.46582 20.7502 7.62516V16.3748C20.7467 17.5342 20.2846 18.6451 19.4648 19.4648C18.6451 20.2846 17.5342 20.7467 16.3748 20.7502H7.62516C6.46582 20.7467 5.35495 20.2846 4.53517 19.4648C3.71539 18.6451 3.25331 17.5342 3.24984 16.3748V7.62516C3.25331 6.46582 3.71539 5.35495 4.53517 4.53517C5.35495 3.71539 6.46582 3.25331 7.62516 3.24984H16.3748ZM16.3748 1.5H7.62516C4.25625 1.5 1.5 4.25625 1.5 7.62516V16.3748C1.5 19.7437 4.25625 22.5 7.62516 22.5H16.3748C19.7437 22.5 22.5 19.7437 22.5 16.3748V7.62516C22.5 4.25625 19.7437 1.5 16.3748 1.5Z"
+                                    fill="white" />
+                                <path
+                                    d="M17.6873 7.62524C17.4278 7.62524 17.174 7.54827 16.9582 7.40405C16.7423 7.25983 16.5741 7.05484 16.4748 6.81502C16.3754 6.57519 16.3494 6.31129 16.4001 6.05669C16.4507 5.80209 16.5757 5.56822 16.7593 5.38467C16.9428 5.20111 17.1767 5.07611 17.4313 5.02546C17.6859 4.97482 17.9498 5.00081 18.1896 5.10015C18.4294 5.19949 18.6344 5.36772 18.7786 5.58356C18.9229 5.7994 18.9998 6.05316 18.9998 6.31274C19.0002 6.48521 18.9665 6.65605 18.9007 6.81545C18.8349 6.97486 18.7382 7.1197 18.6163 7.24165C18.4943 7.3636 18.3495 7.46026 18.1901 7.52609C18.0306 7.59192 17.8598 7.62562 17.6873 7.62524ZM12 8.49993C12.6923 8.49993 13.369 8.70521 13.9446 9.08982C14.5202 9.47442 14.9688 10.0211 15.2337 10.6606C15.4986 11.3002 15.568 12.004 15.4329 12.6829C15.2978 13.3619 14.9645 13.9856 14.475 14.4751C13.9855 14.9646 13.3618 15.2979 12.6828 15.433C12.0039 15.568 11.3001 15.4987 10.6606 15.2338C10.021 14.9689 9.47433 14.5203 9.08973 13.9447C8.70513 13.3691 8.49985 12.6924 8.49985 12.0001C8.50084 11.0721 8.86992 10.1824 9.52611 9.5262C10.1823 8.87001 11.072 8.50092 12 8.49993ZM12 6.75009C10.9617 6.75009 9.94662 7.058 9.08326 7.63487C8.2199 8.21175 7.54699 9.03169 7.14963 9.991C6.75227 10.9503 6.64831 12.0059 6.85088 13.0243C7.05345 14.0427 7.55347 14.9782 8.28769 15.7124C9.02192 16.4466 9.95738 16.9466 10.9758 17.1492C11.9942 17.3518 13.0498 17.2478 14.0091 16.8505C14.9684 16.4531 15.7883 15.7802 16.3652 14.9168C16.9421 14.0535 17.25 13.0384 17.25 12.0001C17.25 10.6077 16.6969 9.27234 15.7123 8.28778C14.7277 7.30321 13.3924 6.75009 12 6.75009Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.0453 12.7101L2.02312 20.9676C1.9675 20.9937 1.90619 21.0055 1.84484 21.0018C1.78349 20.9981 1.72405 20.979 1.67198 20.9463C1.61991 20.9137 1.57688 20.8685 1.54683 20.8149C1.51678 20.7612 1.50068 20.7009 1.5 20.6395V15.3281C1.5 15.2407 1.53049 15.1561 1.5862 15.0889C1.64191 15.0216 1.71935 14.9759 1.80516 14.9596L13.4123 12.7565C14.2261 12.6023 14.2261 11.437 13.4123 11.2827L1.80469 9.07962C1.71904 9.06327 1.64177 9.01759 1.58616 8.95044C1.53056 8.88328 1.50009 8.79884 1.5 8.71165V3.40259C1.5 3.13353 1.77562 2.92165 2.02312 3.02759L22.0453 11.3324C22.1799 11.3904 22.2946 11.4865 22.3751 11.609C22.4557 11.7314 22.4986 11.8747 22.4986 12.0213C22.4986 12.1678 22.4557 12.3112 22.3751 12.4336C22.2946 12.556 22.1799 12.6521 22.0453 12.7101Z"
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.4405 4.55161C18.4697 3.58039 17.3165 2.81077 16.0471 2.28706C14.7777 1.76334 13.4172 1.49587 12.0441 1.50005C6.28125 1.50005 1.59 6.16786 1.58766 11.9063C1.58511 13.7335 2.06676 15.5288 2.98359 17.1094L1.5 22.5L7.04297 21.053C8.57729 21.8842 10.2948 22.3193 12.0398 22.3186H12.0441C17.8064 22.3186 22.4972 17.6504 22.5 11.9124C22.5035 10.5439 22.2348 9.18839 21.7095 7.92471C21.1843 6.66103 20.413 5.51442 19.4405 4.55161ZM12.0441 20.5622H12.0403C10.4847 20.5627 8.95739 20.1464 7.61719 19.3566L7.29984 19.1691L4.01062 20.0279L4.88859 16.8361L4.68187 16.508C3.81206 15.1309 3.35121 13.5351 3.35297 11.9063C3.35297 7.1377 7.25344 3.25786 12.0473 3.25786C14.347 3.25375 16.5542 4.16327 18.1833 5.78636C19.8125 7.40944 20.7302 9.61318 20.7347 11.9129C20.7328 16.6819 16.8342 20.5622 12.0441 20.5622ZM16.8108 14.0846C16.5497 13.9543 15.2639 13.3252 15.0258 13.2385C14.7877 13.1518 14.6119 13.1082 14.438 13.3688C14.2641 13.6294 13.763 14.2126 13.6106 14.3883C13.4583 14.5641 13.3059 14.5833 13.0448 14.453C12.7838 14.3227 11.9414 14.0485 10.9434 13.1625C10.1667 12.473 9.64266 11.6218 9.49031 11.3616C9.33797 11.1015 9.47391 10.9604 9.60469 10.831C9.72234 10.7143 9.86578 10.5272 9.99656 10.3754C10.1273 10.2235 10.1709 10.1147 10.2577 9.9413C10.3444 9.76786 10.3012 9.61599 10.2361 9.48614C10.1709 9.3563 9.64828 8.07614 9.43078 7.55536C9.21844 7.04817 9.00328 7.11708 8.84297 7.10911C8.69062 7.10161 8.51484 7.09974 8.34188 7.09974C8.20965 7.10318 8.07955 7.13384 7.9597 7.18981C7.83985 7.24579 7.73283 7.32586 7.64531 7.42505C7.40578 7.68567 6.73078 8.31567 6.73078 9.59442C6.73078 10.8732 7.66828 12.1107 7.79766 12.2841C7.92703 12.4575 9.63984 15.084 12.2606 16.2104C12.7473 16.4188 13.2445 16.6015 13.7503 16.7579C14.3761 16.9557 14.9456 16.928 15.3956 16.861C15.8977 16.7865 16.9425 16.2319 17.1595 15.6244C17.3766 15.0169 17.377 14.4966 17.3119 14.3883C17.2467 14.2801 17.0723 14.2144 16.8108 14.0846Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Навигация:</h4>
+                    <nav class="footer__nav">
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Гражданство/ВНЖ
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    МВД
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    СТУПРО
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    ДНК
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Нотариальные услуги
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Финансовые услуги
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Недвижимость
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Консьерж
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Гражданства
+                                </a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="" class="footer__nav-link">
+                                    Блог
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Мы на карте:</h4>
+                    <iframe class="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6757.70227565131!2d34.790434413531656!3d32.12732229720483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d493e3db56261%3A0x1466332ac19ff2e6!2sUri%20Tsvi%20Grinberg%20St%2011%2C%20Tel%20Aviv-Jaffa%2C%20Israel!5e0!3m2!1sen!2sua!4v1716041270489!5m2!1sen!2sua"
+                        width="400" height="240" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="footer__info">
+                        <a href="tel:+972-58-791-9977" class="footer__link">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 18.6667L28 4" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M28 4L19.3333 28C19.2139 28.2607 18.9534 28.4278 18.6667 28.4278C18.3799 28.4278 18.1195 28.2607 18 28L13.3333 18.6667L4 14C3.73931 13.8805 3.57217 13.6201 3.57217 13.3333C3.57217 13.0466 3.73931 12.7861 4 12.6667L28 4"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Ури Цви Гринберг 11, Тель Авив
+                        </a>
+                        <p class="footer__link">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.7267 28.0001H6.66667C5.19391 28.0001 4 26.8062 4 25.3334V9.33341C4 7.86066 5.19391 6.66675 6.66667 6.66675H22.6667C24.1394 6.66675 25.3333 7.86066 25.3333 9.33341V14.6667"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="24" cy="24.0001" r="5.33333" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20 4V9.33333" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M9.33332 4V9.33333" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M4 14.6667H25.3333" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M24 21.9946V24L25.3333 25.3333" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                            График: Пн-Пт 12:00-20:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="copy">© Borochovich Group | Tel Aviv, Israel | 2024</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.4/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

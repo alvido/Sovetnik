@@ -1,0 +1,118 @@
+.form {
+    background: url(../images/element.svg) no-repeat;
+    background-position: left 60%;
+
+    &__inner {
+        border-radius: 24px;
+        margin: 0 auto;
+
+        max-width: 1120px;
+        padding-block: clamp(2rem, 1.6rem + 1.78vw, 3rem);
+        padding-inline: clamp(1.5rem, 0.5rem + 4.44vw, 4rem);
+        background: linear-gradient(208.18deg, #74B9EB 9.05%, #3D72E0 76.74%);
+        position: relative;
+
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 130px;
+            height: 115px;
+            background: url(../images/element2.svg) no-repeat center;
+            position: absolute;
+            top: -15px;
+            right: -45px;
+
+            @include phone {
+                display: none
+            }
+        }
+    }
+
+
+    &__title {
+        @include fluid-text(36, 24);
+        color: var(--color-light);
+        text-align: center;
+
+        &::after {
+            background: var(--color-light);
+        }
+    }
+
+    &__text {
+        max-width: 640px;
+        margin: 0 auto;
+        @include fluid-text(18, 16);
+        line-height: 1.5;
+        text-align: center;
+        text-wrap: balance;
+        color: rgba(255, 255, 255, 0.9);
+
+        @include phone {
+            text-wrap: wrap;
+        }
+    }
+
+    &__content {
+        margin-top: clamp(1rem, 0.15rem + 3.78vw, 3.125rem);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    & label {
+        font-size: 16px;
+        line-height: 2;
+        font-weight: 400;
+        text-indent: 16px;
+        color: rgba(255, 255, 255, 0.9);
+        ;
+    }
+
+    & input {
+        width: 280px;
+        height: 64px;
+        padding: 0 32px;
+        border-radius: 100px;
+        border: none;
+        font-size: 16px;
+        line-height: 2;
+        font-weight: 400;
+        outline: none;
+
+        @include tablet {
+            width: 100%;
+        }
+
+        &:focus-visible {
+            border: 1px solid var(--color-gray);
+            /* Изменяем цвет и толщину обводки */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            /* Добавляем тень для эффекта */
+        }
+    }
+
+    &__button {
+        margin-top: clamp(1rem, 0.4rem + 2.67vw, 2.5rem);
+        margin-inline: auto;
+    }
+}

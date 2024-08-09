@@ -1,0 +1,170 @@
+.navigation {
+    position: absolute;
+    align-items: center;
+    padding: 0 32px;
+    right: 100px;
+    max-width: 750px;
+    border-radius: 24px;
+    background: var(--color-light);
+    box-shadow: 0px 4px 20px 0px var(--color-shadow);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    top: -1000%;
+    translate: 0 -50%;
+
+    @include tablet {
+        max-width: none;
+        padding: 40px 16px;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        box-shadow: none;
+        translate: 0 0;
+    }
+
+
+    &.active {
+        top: 50%;
+        opacity: 1;
+        z-index: 1;
+
+        @include tablet {
+            top: 100%;
+        }
+    }
+
+
+    &__list {
+        max-width: 650px;
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        column-gap: 32px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        /* Дополнительно для плавного скролла */
+        -ms-overflow-style: none;
+        /* Internet Explorer 10+ */
+        scrollbar-width: none;
+        /* Firefox */
+
+        &::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Opera */
+        }
+
+        @include tablet {
+            max-width: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            overflow: auto;
+        }
+    }
+
+    &__item {
+        font-size: 18px;
+        text-transform: uppercase;
+        text-wrap: nowrap;
+    }
+
+    &__link {
+        position: relative;
+
+        @include tablet {
+            padding: 0 24px;
+        }
+
+        @include hover {
+            color: var(--color-dark);
+
+            &::after {
+                width: 100%;
+                opacity: 1;
+
+                @include tablet {
+                    height: 100%;
+                    width: 0;
+                }
+            }
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: -19px;
+            translate: -50% 0;
+            width: 00%;
+            border-top: 8px solid var(--color-accent);
+            border-radius: 8px 8px 0 0;
+            opacity: 0;
+            transition: all .3s ease;
+
+            @include tablet {
+                left: 0;
+                bottom: 50%;
+                translate: 0 50%;
+                border: none;
+                border-right: 8px solid var(--color-accent);
+                border-radius: 0 8px 8px 0;
+                height: 0;
+            }
+        }
+
+        &--active {
+            color: var(--color-dark);
+
+            &::after {
+                width: 100%;
+                opacity: 1;
+
+                @include tablet {
+                    width: 0;
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+
+    &__sublist {
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        top: 101%;
+        left: 0;
+        width: 100%;
+        padding: 32px 40px;
+        background: var(--color-light);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 24px;
+
+    }
+
+    &__subitem {
+        flex-basis: calc(50% - 12px);
+    }
+
+    &__sublink {
+        text-transform: capitalize;
+        color: var(--color-dark);
+        font-weight: 700;
+        text-wrap: wrap;
+        line-height: 1.8;
+
+        @include hover {
+            color: var(--color-accent);
+        }
+    }
+
+    &__arrow {
+        @include tablet {
+            display: none;
+        }
+    }
+}
