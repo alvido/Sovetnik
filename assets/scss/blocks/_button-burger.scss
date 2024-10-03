@@ -1,25 +1,26 @@
 .burger {
-    background: var(--bg-gradient);
+    display: none;
 
-    &::before {
-        background: var(--bg-gradient-alt);
+    @include mobile {
+        display: flex;
     }
 
     & span {
         font-size: 0;
-        display: block;
-        width: 28px;
-        height: 3px;
+        @include flex-center;
+        width: 24px;
+        height: 2px;
         background: var(--color-light);
         border-radius: 3px;
         transition: all .3s ease;
+
 
         &::before,
         &::after {
             content: '';
             display: block;
-            width: 28px;
-            height: 3px;
+            width: 24px;
+            height: 2px;
             background: var(--color-light);
             border-radius: 3px;
 
@@ -30,36 +31,21 @@
         }
 
         &::before {
-            top: 20px;
-
-            @include mobile {
-                top: 18px;
-            }
+            top: 12px;
         }
 
         &::after {
-            bottom: 20px;
-
-            @include mobile {
-                bottom: 18px;
-            }
+            bottom: 12px;
         }
     }
 
     &.burger--active {
-
-        background: var(--color-light);
-
-        &::before {
-            background: var(--color-gray-alt);
-        }
 
         & span {
             width: 0;
 
             &::before,
             &::after {
-                background: var(--color-dark);
                 top: 50%;
                 bottom: auto;
                 translate: -50% -50%;

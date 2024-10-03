@@ -1,18 +1,36 @@
 .header {
-    padding-block: clamp(1rem, 0.6rem + 1.78vw, 2rem);
+    padding-block: 30px;
+    background: var(--color-light);
+
+    @include laptop {
+        padding-block: 10px;
+    }
+
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
 
     &__inner {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        column-gap: 40px;
+        column-gap: 15px;
     }
 
     &__contact {
         display: flex;
-        align-items: center;
-        column-gap: 40px;
+        flex-direction: column;
+        row-gap: 4px;
+
+        @include laptop {
+            flex-direction: row;
+            column-gap: 20px;
+        }
 
         @include mobile {
             flex-direction: column;
@@ -23,9 +41,9 @@
         }
 
         & a {
-
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--color-dark);
 
             @include hover {
                 color: var(--color-accent);

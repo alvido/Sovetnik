@@ -1,5 +1,6 @@
 $desktop-above: 1281px;
 $desktop: 1280px;
+$laptop: 1150px;
 
 $tablet-above: 1024px;
 $tablet: 1023px;
@@ -17,6 +18,12 @@ $phone: 560px;
 
 @mixin desktop {
     @media (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media (max-width: $laptop) {
         @content;
     }
 }

@@ -1,57 +1,111 @@
-// Burger Menu Open start
+// Burger Menu Open //
 document.addEventListener("DOMContentLoaded", function () {
+  // Выбираем бургер-кнопку и навигацию
   let burgerButton = document.getElementById("burgerButton");
-  let language = document.querySelector(".language");
   let navigation = document.querySelector(".navigation");
   let body = document.querySelector("body");
-  let rightArrow = document.getElementById("rightArrow"); // Добавьте это, если rightArrow используется
 
+  // Если бургер-кнопка существует, добавляем обработчик события
   if (burgerButton) {
-    burgerButton.addEventListener("click", function () {
-      burgerButton.classList.toggle("burger--active");
-      language.classList.toggle("language--active");
-      navigation.classList.toggle("active");
-      if (rightArrow) {
-        // rightArrow.classList.remove("hidden");
-      }
-      body.classList.toggle("lock");
+    burgerButton.addEventListener("click", function (e) {
+      e.stopPropagation(); // Остановка всплытия события
+      burgerButton.classList.toggle("burger--active"); // Переключаем класс активности бургер-кнопки
+      navigation.classList.toggle("navigation--active"); // Переключаем класс активности навигации
+      body.classList.toggle("lock"); 
     });
   }
-  // Обработчик события click для всего документа
-  document.addEventListener("click", function (e) {
-    if (!navigation.contains(e.target) && !burgerButton.contains(e.target)) {
-      // Проверяем, кликнули ли вне области navigation и burgerButton
+
+  links.forEach((link) => {
+    link.addEventListener("click", function (e) {
       burgerButton.classList.remove("burger--active");
-      language.classList.remove("language--active"); // Добавляем для синхронности
-      navigation.classList.remove("active");
-      body.classList.remove("lock");
-    }
+      navigation.classList.remove("navigation--active");
+      body.classList.remove("lock"); 
+
+    });
   });
 });
-// Burger Menu Open end
+//
 
 //
 document.addEventListener("DOMContentLoaded", function () {
-  const consultation = document.getElementById("consultation");
-  const header = document.querySelector(".header");
-  const offer = document.getElementById("offer");
+  // Находим все элементы меню с подменю
+  const menuItems = document.querySelectorAll(".menu-item-has-children");
 
-  consultation.addEventListener("click", function () {
-    // Получаем высоту хедера
-    const headerHeight = header.offsetHeight;
+  // Обрабатываем клик по каждому элементу меню
+  menuItems.forEach(item => {
+    item.addEventListener("click", function (e) {
+      e.preventDefault(); // Отключаем переход по ссылке
 
-    // Получаем верхнюю позицию секции offer
-    const offerPosition = offer.getBoundingClientRect().top + window.scrollY;
+      // Убираем класс 'active' у всех элементов
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+      } else {
+        menuItems.forEach(el => {
+          el.classList.remove("active");
+          const openSubmenu = el.querySelector(".sub-menu");
+          if (openSubmenu) {
+          }
+        });
 
-    // Вычисляем конечную позицию с учетом высоты хедера
-    const scrollToPosition = offerPosition - headerHeight * 2;
+        this.classList.add("active");
+      }
 
-    // Плавно прокручиваем страницу к рассчитанной позиции
-    window.scrollTo({
-      top: scrollToPosition,
-      behavior: "smooth",
+
+      // Находим подменю внутри текущего элемента
+      const submenu = this.querySelector(".sub-menu");
+
+      // Если у элемента есть подменю, управляем его видимостью
+      if (submenu) {
+        // Если подменю открыто, скрываем его
+        if (submenu.classList.contains("show")) {
+          fadeOut(submenu);
+        } else {
+          // Скрываем все открытые подменю
+          document.querySelectorAll(".sub-menu.show").forEach(openSubmenu => {
+            fadeOut(openSubmenu);
+          });
+          // Показываем текущее подменю
+          fadeIn(submenu);
+        }
+
+      } else {
+        // Если у элемента нет подменю, просто скрываем все открытые подменю
+        document.querySelectorAll(".sub-menu.show").forEach(openSubmenu => {
+          fadeOut(openSubmenu);
+        });
+      }
     });
   });
+
+  // Закрытие подменю при клике вне области навигации
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".menu-item-has-children")) {
+      // Убираем класс 'active' у всех элементов меню
+      menuItems.forEach(item => {
+        item.classList.remove("active");
+      });
+      // Закрываем все подменю
+      document.querySelectorAll(".sub-menu.show").forEach(submenu => {
+        fadeOut(submenu);
+      });
+    }
+  });
+
+  // Функция для анимации fadeIn
+  function fadeIn(element) {
+    element.style.display = "flex"; // Или любой другой стиль отображения
+    setTimeout(() => {
+      element.classList.add("show");
+    }, 10);
+  }
+
+  // Функция для анимации fadeOut
+  function fadeOut(element) {
+    element.classList.remove("show");
+    setTimeout(() => {
+      element.style.display = "none";
+    }, 300); // Тайм-аут соответствует длительности анимации
+  }
 });
 
 //
@@ -97,154 +151,6 @@ function noLettersOrSpecialChars(event) {
   }
 }
 // input logic start
-
-// navigation logic start
-document.addEventListener("DOMContentLoaded", function () {
-  const menuItems = document.querySelectorAll(".navigation__list li");
-  menuItems.forEach(function (menuItem) {
-    const link = menuItem.querySelector("a");
-    const subMenu = menuItem.querySelector(".sub-menu");
-    const navigation = document.querySelector(".navigation");
-
-    if (link && subMenu) {
-      link.addEventListener("mouseover", function (event) {
-        closeActiveMenus(); // Закрываем все открытые меню перед открытием нового
-
-        // Добавление класса активности текущему пункту меню и его подменю
-        link.classList.add("active");
-        subMenu.classList.add("active");
-        navigation.classList.add("border");
-      });
-
-      link.addEventListener("mouseleave", function (event) {
-        // Удаление класса активности у текущего пункта меню и его подменю, если курсор не находится над подменю
-        if (!menuItem.contains(event.relatedTarget)) {
-          link.classList.remove("active");
-          subMenu.classList.remove("active");
-          navigation.classList.remove("border");
-        }
-      });
-
-      subMenu.addEventListener("mouseover", function (event) {
-        // Добавление класса активности к текущему пункту меню и его подменю
-        link.classList.add("active");
-        subMenu.classList.add("active");
-        navigation.classList.add("border");
-      });
-
-      subMenu.addEventListener("mouseleave", function (event) {
-        // Удаление класса активности у текущего пункта меню и его подменю, если курсор не находится над ссылкой
-        if (!menuItem.contains(event.relatedTarget)) {
-          link.classList.remove("active");
-          subMenu.classList.remove("active");
-          navigation.classList.remove("border");
-        }
-      });
-    }
-  });
-  function closeActiveMenus() {
-    // Удаление класса активности у всех ссылок и их подменю
-    menuItems.forEach(function (menuItem) {
-      const link = menuItem.querySelector("a");
-      const subMenu = menuItem.querySelector(".sub-menu");
-      const navigation = document.querySelector(".navigation");
-
-      if (link) {
-        link.classList.remove("active");
-      }
-      if (subMenu) {
-        subMenu.classList.remove("active");
-      }
-      if (subMenu) {
-        navigation.classList.remove("border");
-      }
-    });
-  }
-});
-// navigation logic end
-
-// navigation scroll logic start
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollableMenu = document.getElementById("scrollableMenu");
-  const leftArrow = document.getElementById("leftArrow");
-  const rightArrow = document.getElementById("rightArrow");
-
-  function updateArrows() {
-    if (window.innerWidth < 1024) return;
-
-    // Hide left arrow if scroll is at the beginning
-    if (scrollableMenu.scrollLeft === 0) {
-      leftArrow.classList.add("hidden");
-    } else {
-      leftArrow.classList.remove("hidden");
-    }
-
-    // Hide right arrow if scroll is at the end
-    if (
-      scrollableMenu.scrollWidth - scrollableMenu.clientWidth - 10 <
-      scrollableMenu.scrollLeft
-    ) {
-      rightArrow.classList.add("hidden");
-    } else {
-      rightArrow.classList.remove("hidden");
-    }
-
-    console.log(scrollableMenu.scrollWidth);
-    console.log(scrollableMenu.clientWidth);
-    console.log(scrollableMenu.scrollLeft);
-  }
-
-  function scrollLeft() {
-    if (window.innerWidth < 1024) return;
-
-    scrollableMenu.scrollBy({ left: -100, behavior: "smooth" });
-  }
-
-  function scrollRight() {
-    if (window.innerWidth < 1024) return;
-
-    scrollableMenu.scrollBy({ left: 100, behavior: "smooth" });
-  }
-  // Initial check
-  updateArrows();
-
-  // Update arrows on scroll
-  scrollableMenu.addEventListener("scroll", function () {
-    if (window.innerWidth < 1024) return;
-
-    updateArrows();
-  });
-
-  // Update arrows on window resize
-  window.addEventListener("resize", updateArrows);
-
-  if (leftArrow) {
-    leftArrow.addEventListener("click", function () {
-      if (window.innerWidth < 1024) return;
-
-      scrollLeft();
-    });
-    rightArrow.addEventListener("click", function () {
-      if (window.innerWidth < 1024) return;
-
-      scrollRight();
-    });
-  }
-
-  scrollableMenu.addEventListener(
-    "wheel",
-    function (event) {
-      if (window.innerWidth < 1024) return;
-
-      if (event.deltaY !== 0) {
-        event.preventDefault();
-        this.scrollLeft += event.deltaY;
-      }
-    }
-    // { passive: true }
-  );
-});
-// navigation scroll logic end
 
 //
 document.addEventListener("DOMContentLoaded", function () {
