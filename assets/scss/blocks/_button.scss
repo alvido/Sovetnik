@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 
-    padding: 0 40px;
+    padding: 0 30px;
     gap: 10px;
     border-radius: 55px;
     font-weight: 700;
@@ -43,5 +43,26 @@
         }
     }
 
+    &--white {
+        color: var(--color-dark);
+        background: var(--color-light);
+        border: 2px solid var(--color-dark);
 
+        @include hover {
+            color: var(--color-light);
+            background: var(--color-dark);
+        }
+    }
+
+
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include phone {
+        flex-direction: column;
+    }
 }

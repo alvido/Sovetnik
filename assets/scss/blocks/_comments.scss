@@ -8,7 +8,6 @@
 
 
     &__list {
-        margin: clamp(2rem, 0.8rem + 5.33vw, 5rem) 0;
         display: flex;
         align-items: center;
     }
@@ -18,10 +17,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+
+        & h4 {
+            margin: 0;
+        }
 
         & img {
-            width: 350px;
-            height: 350px;
+            max-width: 350px;
+            max-height: 350px;
             border-radius: 20px;
             object-fit: cover;
             cursor: pointer;
@@ -106,6 +111,10 @@ main {
 .swiper__navigation-button {
     display: flex;
     align-items: center;
+
+    @include phone {
+        display: none;
+    }
 }
 
 .fullscreen-container {

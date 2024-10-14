@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let burgerButton = document.getElementById("burgerButton");
   let navigation = document.querySelector(".navigation");
   let body = document.querySelector("body");
+  let links = document.querySelectorAll(".navigation__list a");
 
   // Если бургер-кнопка существует, добавляем обработчик события
   if (burgerButton) {
@@ -11,18 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
       e.stopPropagation(); // Остановка всплытия события
       burgerButton.classList.toggle("burger--active"); // Переключаем класс активности бургер-кнопки
       navigation.classList.toggle("navigation--active"); // Переключаем класс активности навигации
-      body.classList.toggle("lock"); 
+      body.classList.toggle("lock");
     });
   }
 
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      burgerButton.classList.remove("burger--active");
-      navigation.classList.remove("navigation--active");
-      body.classList.remove("lock"); 
+  // links.forEach((link) => {
+  //   link.addEventListener("click", function (e) {
+  //     burgerButton.classList.remove("burger--active");
+  //     navigation.classList.remove("navigation--active");
+  //     body.classList.remove("lock"); 
 
-    });
-  });
+  //   });
+  // });
 });
 //
 
@@ -152,49 +153,58 @@ function noLettersOrSpecialChars(event) {
 }
 // input logic start
 
-//
-document.addEventListener("DOMContentLoaded", function () {
-  //swiper
-  let swiper;
-
-  swiper = new Swiper(".swiper", {
-    observer: true,
-    observeParents: true,
-    loop: true,
-    // autoplay: {
-    //   delay: 5000,
-    //   disableOnInteraction: false,
-    // },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    // Настройки для различных размеров экранов
-    breakpoints: {
-      // Когда ширина экрана >= 320px
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 10,
+// swiper
+document.addEventListener('DOMContentLoaded', function () {
+  // Инициализация Swiper для комментариев
+  new Swiper('#comments__swiper', {
+      loop: true, // Бесконечный цикл
+      pagination: {
+          el: '.comments-pagination',
+          clickable: true,
       },
-      // Когда ширина экрана >= 480px
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+      navigation: {
+          nextEl: '.comments-button-next',
+          prevEl: '.comments-button-prev',
       },
-      // Когда ширина экрана >= 640px
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+          640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+          },
+          1024: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+          },
+      }
   });
-  // swiper
-});
 
+  // Инициализация Swiper для дипломов
+  new Swiper('#diploms__swiper', {
+      loop: true, // Бесконечный цикл
+      pagination: {
+          el: '.diploms-pagination',
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.diploms-button-next',
+          prevEl: '.diploms-button-prev',
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+          640: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+          },
+          1024: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+          },
+      }
+  });
+});
 //
 
 // Получаем список изображений и текущий индекс
@@ -251,3 +261,88 @@ function showImage(index) {
 images.forEach((image, index) => {
   image.addEventListener("click", () => showImage(index));
 });
+
+
+// radiomark
+document.addEventListener("DOMContentLoaded", function () {
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  const radiomarks = document.querySelectorAll('.radiomark');
+
+  // Обновление состояния для всех радиокнопок
+  function updateRadiomarkState() {
+    // Удаляем класс active у всех radiomark
+    radiomarks.forEach(mark => mark.classList.remove('active'));
+
+    // Добавляем класс active к radiomark, соответствующему выбранной радиокнопке
+    radioButtons.forEach((radio) => {
+      if (radio.checked) {
+        const radiomark = radio.closest('.custom-radio').querySelector('.radiomark');
+        if (radiomark) {
+          radiomark.classList.add('active');
+        }
+      }
+    });
+  }
+
+  // Установка обработчиков событий change и инициализация состояния
+  radioButtons.forEach((radio) => {
+    radio.addEventListener('change', updateRadiomarkState);
+    // Инициализация состояния при загрузке страницы
+    if (radio.checked) {
+      updateRadiomarkState();
+    }
+  });
+
+  // Обработчик клика для radiomark
+  radiomarks.forEach((mark) => {
+    mark.addEventListener('click', function () {
+      const radioInput = this.closest('.custom-radio').querySelector('input[type="radio"]');
+      if (radioInput && !radioInput.checked) {
+        radioInput.checked = true; // Устанавливаем состояние checked
+        radioInput.dispatchEvent(new Event('change')); // Вызываем событие change
+      }
+    });
+  });
+});
+
+//radiomark
+//checkmark
+document.addEventListener("DOMContentLoaded", function () {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  // Обновление состояния checkmark
+  function updateCheckmarkState() {
+    checkboxes.forEach((checkbox) => {
+      const checkmark = checkbox.closest('.custom-checkbox').querySelector('.checkmark');
+      if (checkmark) {
+        if (checkbox.checked) {
+          checkmark.classList.add('active'); // Добавляем класс active если чекбокс отмечен
+        } else {
+          checkmark.classList.remove('active'); // Убираем класс active если чекбокс не отмечен
+        }
+      }
+    });
+  }
+
+  // Инициализация состояния при загрузке страницы
+  updateCheckmarkState();
+
+  // Обработчик клика для checkmark
+  const checkmarks = document.querySelectorAll('.checkmark');
+  checkmarks.forEach((mark) => {
+    mark.addEventListener('click', function () {
+      const checkInput = this.closest('.custom-checkbox').querySelector('input[type="checkbox"]');
+      if (checkInput) {
+        // checkInput.checked = !checkInput.checked; // Переключаем состояние checked
+        checkInput.dispatchEvent(new Event('change')); // Вызываем событие change для обновления состояния
+      }
+    });
+  });
+
+  // Обработчик события change для обновления состояния checkmark
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', updateCheckmarkState);
+  });
+});
+
+//checkmark

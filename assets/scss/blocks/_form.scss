@@ -1,8 +1,12 @@
-.form {
+.wpcf7-form-control-wrap {
+    width: 100%;
+}
+
+form {
     background: url(../images/element.svg) no-repeat;
     background-position: left 60%;
 
-    &__inner {
+    & .form__inner {
         border-radius: 24px;
         margin: 0 auto;
 
@@ -31,7 +35,7 @@
     }
 
 
-    &__title {
+    & .form__title {
         @include fluid-text(36, 24);
         color: var(--color-light);
         text-align: center;
@@ -41,7 +45,7 @@
         }
     }
 
-    &__text {
+    & .form__text {
         max-width: 640px;
         margin: 0 auto;
         @include fluid-text(18, 16);
@@ -55,12 +59,11 @@
         }
     }
 
-    &__content {
+    & .form__content {
         margin-top: clamp(1rem, 0.15rem + 3.78vw, 3.125rem);
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         gap: 10px;
 
         @include tablet {
@@ -68,7 +71,8 @@
         }
     }
 
-    &__group {
+    & .form__group {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -83,36 +87,205 @@
         font-size: 16px;
         line-height: 2;
         font-weight: 400;
-        text-indent: 16px;
         color: rgba(255, 255, 255, 0.9);
-        ;
     }
 
-    & input {
-        width: 280px;
-        height: 64px;
-        padding: 0 32px;
-        border-radius: 100px;
+    & input,
+    & select,
+    & textarea {
+        width: 100%;
+        min-height: var(--input-height);
+        padding: 10px 24px;
+        border-radius: var(--border-radius);
         border: none;
         font-size: 16px;
         line-height: 2;
         font-weight: 400;
         outline: none;
+        resize: none;
+        border: 2px solid var(--color-light);
+        transition-duration: var(--transition-duration);
 
         @include tablet {
             width: 100%;
         }
 
         &:focus-visible {
-            border: 1px solid var(--color-gray);
+            border: 2px solid var(--color-dark);
             /* Изменяем цвет и толщину обводки */
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
             /* Добавляем тень для эффекта */
         }
     }
 
-    &__button {
+    & textarea {
+        min-height: 200px;
+    }
+
+    & .form__button {
         margin-top: clamp(1rem, 0.4rem + 2.67vw, 2.5rem);
         margin-inline: auto;
+    }
+
+}
+
+/* Стилизованный radio button */
+.custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    color: var(--color-dark);
+
+    & .wpcf7-radio {
+        width: 100%;
+    }
+
+    & .wpcf7-list-item {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &>label {
+            cursor: pointer;
+        }
+    }
+
+    /* Скрыть стандартный radio button */
+    & input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        /* При отмеченном radio button изменить цвет и показать "галочку" */
+        &:checked~.radiomark {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    /* Стиль для видимого элемента radio button */
+    & .radiomark {
+        display: inline-block;
+        min-width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        background: var(--color-light);
+        transition: all .3s ease;
+        border: var(--border);
+        border-color: var(--color-light);
+
+        &.active {
+            border-color: var(--color-dark);
+
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        /* Отображение "галочки" внутри radio button */
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            @include squere(60%);
+            opacity: 0;
+            background: var(--color-dark);
+            border-radius: 50%;
+            transition: all .3s ease;
+        }
+    }
+}
+
+/* Стилизованный чекбокс */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+    color: var(--color-dark);
+
+    & .wpcf7-radio {
+        width: 100%;
+    }
+
+    & .wpcf7-list-item {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &>label {
+            cursor: pointer;
+        }
+    }
+
+    /* Скрыть стандартный чекбокс */
+    & input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        /* При отмеченном чекбоксе изменить цвет и показать "галочку" */
+        &:checked+.checkmark {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    /* Стиль для видимого элемента чекбокса */
+    & .checkmark {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        position: relative;
+        cursor: pointer;
+        background: var(--color-light);
+        border: var(--border);
+        border-color: var(--color-light);
+
+
+        &.active {
+            border-color: var(--color-dark);
+
+            &::after {
+                opacity: 1;
+            }
+        }
+
+
+        /* Отображение "галочки" внутри чекбокса */
+        &::after {
+            content: "";
+            @include abs-center;
+            width: 80%;
+            height: 70%;
+            opacity: 0;
+            background: url(../images/icon/agree.svg) no-repeat center / cover;
+
+            background: var(--color-dark);
+            mask: url('../images/icon/agree.svg') no-repeat center;
+            -webkit-mask: url('../images/icon/agree.svg') no-repeat center;
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            transition-duration: var(--transition-duration);
+        }
     }
 }
